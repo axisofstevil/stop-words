@@ -7,8 +7,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/axisofstevil/stop-words.svg?style=flat-square)](https://scrutinizer-ci.com/g/axisofstevil/stop-words)
 [![Total Downloads](https://img.shields.io/packagist/dt/axisofstevil/stop-words.svg?style=flat-square)](https://packagist.org/packages/axisofstevil/stop-words)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+This library is intended to help filter your text with common stop words. It includes a list of built-in basic and strict stop words. It also includes functionality that lets you merge or overwrite with your own list of words.
 
 ## Install
 
