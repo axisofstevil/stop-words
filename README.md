@@ -21,8 +21,8 @@ $ composer require axisofstevil/stop-words
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+$filter = new Axisofstevil\StopWords\Filter();
+echo $filter->cleanText('A Walk to Remember');
 ```
 
 ## Testing
