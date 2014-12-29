@@ -86,16 +86,38 @@ class WordsTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($word_count > count($custom_words));
     }
 
-    public function testTextCleanedUsingStopWords()
+    public function testTextCleanedUsingDefaultStopWords()
     {
         $filter = new Filter;
         $words = $filter->getWords();
         $text = $this->mixedText($words);
 
-        $cleanedText = $filter->cleanText($text);
+        $cleaned_text = $filter->cleanText($text);
 
         foreach ($words as $word) {
-            $this->assertNotContains(' '.$word.' ', $cleanedText);
+            $this->assertNotContains(' '.$word.' ', $cleaned_text);
         }
+    }
+
+    public function testTextCleanedUsingCustomStopWords()
+    {
+        $words = array('a','walk','to');
+        $filter = new Filter($words);
+        $text = 'A Walk to Remember';
+
+        $cleaned_text = $filter->cleanText($text);
+
+        $this->assertEquals('Remember', $cleaned_text);
+    }
+
+    public function testTextCleanedEmptyStringWhenAllWordsStopWords()
+    {
+        $words = array('a','walk','to','remember');
+        $filter = new Filter($words);
+        $text = 'A Walk to Remember';
+
+        $cleaned_text = $filter->cleanText($text);
+
+        $this->assertEmpty($cleaned_text);
     }
 }

@@ -37,7 +37,7 @@ class Filter
      */
     public function cleanText($text = '')
     {
-        $text = array_diff(explode(' ', $text), $this->stop_words);
+        $text = array_udiff(explode(' ', $text), $this->stop_words, 'strcasecmp');
         return implode(' ', $text);
     }
 
