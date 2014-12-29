@@ -22,7 +22,9 @@ $ composer require axisofstevil/stop-words
 
 ``` php
 $filter = new Axisofstevil\StopWords\Filter();
-echo $filter->cleanText('A Walk to Remember');
+echo $filter->cleanText('A Walk to Remember'); // 'Walk Remember'
+$filter->setWords(array('a','walk','to'));
+echo $filter->cleanText('A Walk to Remember'); // 'Remember'
 ```
 
 ## Testing
