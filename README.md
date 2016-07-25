@@ -33,7 +33,7 @@ echo $filter->cleanText('A Walk to Remember'); // ''
 ## Testing
 
 ``` bash
-$ phpunit
+$ ./vendor/bin/phpunit
 ```
 
 ## Contributing
