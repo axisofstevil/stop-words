@@ -25,8 +25,13 @@ We accept contributions via Pull Requests on [Github](https://github.com/axisofs
 ## Running Tests
 
 ``` bash
-$ phpunit
+$ ./vendor/bin/phpunit
 ```
 
+## Running Code Style Linter
+
+```bash
+$ ./vendor/bin/phpcs --standard=psr2 src/
+```
 
 **Happy coding**!
