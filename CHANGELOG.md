@@ -2,11 +2,11 @@
 
 All notable changes to `stop-words` will be documented in this file.
 
-## 1.0.0 - 2022-08-17
+## NEXT - YYYY-MM-DD
 
 ### Added
 
-- Support for PHP 8
+- Nothing
 
 ### Deprecated
 
@@ -24,7 +24,7 @@ All notable changes to `stop-words` will be documented in this file.
 
 - Nothing
 
-## NEXT - YYYY-MM-DD
+## 1.0.0 - 2022-08-17
 
 ### Added
 
