@@ -35,7 +35,7 @@ function randomWords($count = 1)
 }
 
 it('has default words', function () {
-    $filter = new Filter;
+    $filter = new Filter();
 
     $words = $filter->getWords();
     $default = Words::getDefault();
@@ -64,7 +64,7 @@ it('supports custom words, provided as a string', function () {
 it('supports custom words when set fluently', function () {
     $customWords = randomWords(2);
 
-    $filter = new Filter;
+    $filter = new Filter();
     $words = $filter->setWords($customWords)->getWords();
 
     expect($words)->toEqual($customWords);
@@ -73,14 +73,14 @@ it('supports custom words when set fluently', function () {
 it('supports custom words when merged fluently', function () {
     $customWords = randomWords(2);
 
-    $filter = new Filter;
+    $filter = new Filter();
     $words = $filter->mergeWords($customWords)->getWords();
 
     expect($words)->toContain(...$customWords);
 });
 
 it('cleans text using default stop words', function () {
-    $filter = new Filter;
+    $filter = new Filter();
     $words = $filter->getWords();
     $text = mixedText($words);
 
