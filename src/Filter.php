@@ -1,4 +1,6 @@
-<?php namespace Axisofstevil\StopWords;
+<?php
+
+namespace Axisofstevil\StopWords;
 
 class Filter
 {
@@ -7,8 +9,7 @@ class Filter
      *
      * @var array
      */
-    protected $stop_words = array();
-
+    protected $stopWords = [];
 
     /**
      * Create a new Words Instance
@@ -18,8 +19,8 @@ class Filter
     public function __construct($words = null)
     {
         if ($words) {
-            if (!is_array($words)) {
-                $words = array($words);
+            if (! is_array($words)) {
+                $words = [$words];
             }
             $this->setWords($words);
         } else {
@@ -32,12 +33,12 @@ class Filter
      * Clean text using stop words
      *
      * @param string Body of text to clean
-     *
      * @return string Cleaned text
      */
     public function cleanText($text = '')
     {
-        $text = array_udiff(explode(' ', $text), $this->stop_words, 'strcasecmp');
+        $text = array_udiff(explode(' ', $text), $this->stopWords, 'strcasecmp');
+
         return implode(' ', $text);
     }
 
@@ -48,19 +49,19 @@ class Filter
      */
     public function getWords()
     {
-        return $this->stop_words;
+        return $this->stopWords;
     }
 
     /**
      * Set array of stop words
      *
      * @param array Array of words to set
-     *
      * @return Axisofstevil\StopWords\Words Updated Words object
      */
-    public function setWords(array $words = array())
+    public function setWords(array $words = [])
     {
-        $this->stop_words = $words;
+        $this->stopWords = $words;
+
         return $this;
     }
 
@@ -68,14 +69,14 @@ class Filter
      * Merge array of stop words
      *
      * @param array Array of words to merge
-     *
      * @return Axisofstevil\StopWords\Words Updated Words object
      */
-    public function mergeWords(array $words = array())
+    public function mergeWords(array $words = [])
     {
-        $this->stop_words = array_unique(
-            array_merge($this->stop_words, $words)
+        $this->stopWords = array_unique(
+            array_merge($this->stopWords, $words)
         );
+
         return $this;
     }
 }
